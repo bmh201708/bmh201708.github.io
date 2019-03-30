@@ -96,17 +96,17 @@
 
 
 
-  <meta name="description" content="存个代码">
+  <meta name="description" content="位运算技巧">
 <meta property="og:type" content="article">
 <meta property="og:title" content="基础位运算">
 <meta property="og:url" content="https://bmh201708.github.io/2019/03/30/基础位运算/index.html">
 <meta property="og:site_name" content="bmh201708&#39;s blog">
-<meta property="og:description" content="存个代码">
+<meta property="og:description" content="位运算技巧">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-30T03:35:43.338Z">
+<meta property="og:updated_time" content="2019-03-30T14:11:49.305Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基础位运算">
-<meta name="twitter:description" content="存个代码">
+<meta name="twitter:description" content="位运算技巧">
 
 
 
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-03-30 11:29:55 / 修改时间：11:35:43" itemprop="dateCreated datePublished" datetime="2019-03-30T11:29:55+08:00">2019-03-30</time>
+              <time title="创建时间：2019-03-30 11:29:55 / 修改时间：22:11:49" itemprop="dateCreated datePublished" datetime="2019-03-30T11:29:55+08:00">2019-03-30</time>
             
 
             
@@ -438,7 +438,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/位运算/" itemprop="url" rel="index"><span itemprop="name">位运算</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技巧与优化/" itemprop="url" rel="index"><span itemprop="name">技巧与优化</span></a></span>
 
                 
                 
@@ -459,7 +459,7 @@
           
 
           
-            <div class="post-description">存个代码</div>
+            <div class="post-description">位运算技巧</div>
           
 
         </div>
@@ -475,7 +475,8 @@
       
 
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">inline int read() &#123;</span><br><span class="line">	int s = 0 ,w = 1; char ch = getchar();</span><br><span class="line">	while(ch &lt; 48 || ch &gt; 57) &#123;if(ch == &apos;-&apos;) w = -1 ; ch = getchar();&#125;</span><br><span class="line">	while(ch &gt;= 48 &amp;&amp; ch &lt;= 57) s = (s &lt;&lt; 1) + (s &lt;&lt; 3) + (ch ^ 48) , ch = getchar();</span><br><span class="line">	return s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int T;</span><br><span class="line">int main() &#123;</span><br><span class="line">	T = read();</span><br><span class="line">	while(T --) &#123;</span><br><span class="line">		int opt = read() , x = read() , k;</span><br><span class="line">		if(opt == 1) printf(&quot;%d\n&quot; , x &gt;&gt; 1);</span><br><span class="line">		if(opt == 2) printf(&quot;%d\n&quot; , x &lt;&lt; 1);</span><br><span class="line">		if(opt == 3) printf(&quot;%d\n&quot; , x &lt;&lt; 1 | 1);</span><br><span class="line">		if(opt == 4) printf(&quot;%d\n&quot; , (x &gt;&gt; 1) &lt;&lt; 1 );</span><br><span class="line">		if(opt == 5) printf(&quot;%d\n&quot; , x | 1);</span><br><span class="line">		if(opt == 6) printf(&quot;%d\n&quot; , x ^ 1);</span><br><span class="line">		if(opt == 7) &#123;k = read() ; printf(&quot;%d\n&quot; , x | (1 &lt;&lt; (k - 1)));&#125;</span><br><span class="line">		if(opt == 8) &#123;k = read() ; printf(&quot;%d\n&quot; , x &amp; (~(1 &lt;&lt; (k - 1))) );&#125;</span><br><span class="line">		if(opt == 9) &#123;k = read() ; printf(&quot;%d\n&quot; , x ^ (1 &lt;&lt; (k - 1)) );&#125;</span><br><span class="line">		if(opt == 10) printf(&quot;%d\n&quot; , x &amp; 7);</span><br><span class="line">		if(opt == 11) &#123;k = read() ; printf(&quot;%d\n&quot; , x &amp; ((1 &lt;&lt; k) - 1));&#125;</span><br><span class="line">		if(opt == 12) &#123;k = read() ; printf(&quot;%d\n&quot; , )&#125; </span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="操作"><a href="#操作" class="headerlink" title="操作:"></a>操作:</h2><p>1、去掉最后一位            例如：101101-&gt;10110<br>2、在最后加一个0                 例如：101101-&gt;1011010<br>3、在最后面加一个1        例如：101101-&gt;1011011<br>4、把最后一位变成0        例如：101101-&gt;101100<br>5、把最后一位变成1        例如：101100-&gt;101101<br>6、最后一位取反            例如：101101-&gt;101100<br>7、把右数第k位变成1        例如：101001-&gt;101101,k=3<br>8、把右数第k位变成0        例如：101101-&gt;101001,k=3<br>9、右数第k位取反        例如：101001-&gt;101101,k=3<br>10、取末三位            例如：1101101-&gt;101<br>11、取末k位            例如：1101101-&gt;1101,k=4<br>12、取右数第k位            例如：1101101-&gt;1,k=4<br>13、把末尾k位变成1        例如：101001-&gt;101111,k=4<br>14、末k位取反            例如：101001-&gt;100110,k=4<br>15、把右边连续的1变成0        例如：100101111-&gt;100100000<br>16、把右边起第一个0变成1    例如：100101111-&gt;100111111<br>17、把右边起连续的0变成1    例如：110011000-&gt;110011111<br>18、取右边连续的1        例如：100101111-&gt;1111<br>19、去掉右边起第一个1的左边    例如：100101000-&gt;1000</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">inline int read() &#123;</span><br><span class="line">	int s = 0 ,w = 1; char ch = getchar();</span><br><span class="line">	while(ch &lt; 48 || ch &gt; 57) &#123;if(ch == &apos;-&apos;) w = -1 ; ch = getchar();&#125;</span><br><span class="line">	while(ch &gt;= 48 &amp;&amp; ch &lt;= 57) s = (s &lt;&lt; 1) + (s &lt;&lt; 3) + (ch ^ 48) , ch = getchar();</span><br><span class="line">	return s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int T;</span><br><span class="line">int main() &#123;</span><br><span class="line">	T = read();</span><br><span class="line">	while(T --) &#123;</span><br><span class="line">		int opt = read() , x = read() , k;</span><br><span class="line">		if(opt == 1) printf(&quot;%d\n&quot; , x &gt;&gt; 1);</span><br><span class="line">		if(opt == 2) printf(&quot;%d\n&quot; , x &lt;&lt; 1);</span><br><span class="line">		if(opt == 3) printf(&quot;%d\n&quot; , x &lt;&lt; 1 | 1);</span><br><span class="line">		if(opt == 4) printf(&quot;%d\n&quot; , x - (x &amp; 1) );</span><br><span class="line">		if(opt == 5) printf(&quot;%d\n&quot; , x | 1);</span><br><span class="line">		if(opt == 6) printf(&quot;%d\n&quot; , x ^ 1);</span><br><span class="line">		if(opt == 7) &#123;k = read() ; printf(&quot;%d\n&quot; , x | (1 &lt;&lt; (k - 1)));&#125;</span><br><span class="line">		if(opt == 8) &#123;k = read() ; printf(&quot;%d\n&quot; , x &amp; (~(1 &lt;&lt; (k - 1))) );&#125;</span><br><span class="line">		if(opt == 9) &#123;k = read() ; printf(&quot;%d\n&quot; , x ^ (1 &lt;&lt; (k - 1)) );&#125;</span><br><span class="line">		if(opt == 10) printf(&quot;%d\n&quot; , x &amp; 7);</span><br><span class="line">		if(opt == 11) &#123;k = read() ; printf(&quot;%d\n&quot; , x &amp; ((1 &lt;&lt; k) - 1) );</span><br><span class="line">		if(opt == 12) &#123;k = read() ; printf(&quot;%d\n&quot; , (x &gt;&gt; (k - 1)) &amp; 1 ); &#125; </span><br><span class="line">		if(opt == 13) &#123;k = read() ; printf(&quot;%d\n&quot; , x | ((1 &lt;&lt; k) - 1));&#125;</span><br><span class="line">		if(opt == 14) &#123;k = read() ; printf(&quot;%d\n&quot; , x ^ ((1 &lt;&lt; k) - 1));&#125;</span><br><span class="line">		if(opt == 15) printf(&quot;%d\n&quot; , x &amp; (x + 1));</span><br><span class="line">		if(opt == 16) printf(&quot;%d\n&quot; , x | (x + 1));</span><br><span class="line">		if(opt == 17) printf(&quot;%d\n&quot; , x | (x - 1));</span><br><span class="line">		if(opt == 18) printf(&quot;%d\n&quot; , (x ^ (x + 1)) &gt;&gt; 1);</span><br><span class="line">		if(opt == 19) printf(&quot;%d\n&quot; , x &amp; -x);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -559,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -599,6 +609,19 @@
               
 
               
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">0</span>
+                    <span class="site-state-item-name">标签</span>
+                  
+                </div>
+              
             </nav>
           
 
@@ -619,6 +642,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#操作"><span class="nav-number">1.</span> <span class="nav-text">操作:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
