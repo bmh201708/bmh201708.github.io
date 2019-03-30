@@ -96,24 +96,24 @@
 
 
 
-  <meta name="description" content="怎么写blog？？？ 用cd定位到hexo目录，执行 hexo new ‘my-first-blog’ 然后会在post文件夹生成md文件 然后打开就可以写blog了 格式为 title: postName #文章页面上的显示名称date: 2013-12-02 15:30:16 #文章生成时间，当然可以任意修改categories: 默认分类 #分类tags: [tag1,tag2,tag3]">
+  <meta name="description" content="树形dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to write a blog">
-<meta property="og:url" content="https://bmh201708.github.io/2019/03/30/my-first-blog/index.html">
+<meta property="og:title" content="BZOJ 3090 podjela">
+<meta property="og:url" content="https://bmh201708.github.io/2019/03/30/BZOJ-3090-podjela/index.html">
 <meta property="og:site_name" content="bmh201708&#39;s blog">
-<meta property="og:description" content="怎么写blog？？？ 用cd定位到hexo目录，执行 hexo new ‘my-first-blog’ 然后会在post文件夹生成md文件 然后打开就可以写blog了 格式为 title: postName #文章页面上的显示名称date: 2013-12-02 15:30:16 #文章生成时间，当然可以任意修改categories: 默认分类 #分类tags: [tag1,tag2,tag3]">
+<meta property="og:description" content="树形dp">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-30T14:13:36.473Z">
+<meta property="og:updated_time" content="2019-03-30T14:28:58.479Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to write a blog">
-<meta name="twitter:description" content="怎么写blog？？？ 用cd定位到hexo目录，执行 hexo new ‘my-first-blog’ 然后会在post文件夹生成md文件 然后打开就可以写blog了 格式为 title: postName #文章页面上的显示名称date: 2013-12-02 15:30:16 #文章生成时间，当然可以任意修改categories: 默认分类 #分类tags: [tag1,tag2,tag3]">
+<meta name="twitter:title" content="BZOJ 3090 podjela">
+<meta name="twitter:description" content="树形dp">
 
 
 
 
 
 
-  <link rel="canonical" href="https://bmh201708.github.io/2019/03/30/my-first-blog/">
+  <link rel="canonical" href="https://bmh201708.github.io/2019/03/30/BZOJ-3090-podjela/">
 
 
 
@@ -123,7 +123,7 @@
   };
 </script>
 
-  <title>How to write a blog | bmh201708's blog</title>
+  <title>BZOJ 3090 podjela | bmh201708's blog</title>
   
 
 
@@ -373,7 +373,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bmh201708.github.io/2019/03/30/my-first-blog/">
+    <link itemprop="mainEntityOfPage" href="https://bmh201708.github.io/2019/03/30/BZOJ-3090-podjela/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="bmh201708">
@@ -390,7 +390,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">How to write a blog
+          <h1 class="post-title" itemprop="name headline">BZOJ 3090 podjela
 
               
             
@@ -416,7 +416,7 @@
                 
               
 
-              <time title="创建时间：2019-03-30 10:25:26 / 修改时间：22:13:36" itemprop="dateCreated datePublished" datetime="2019-03-30T10:25:26+08:00">2019-03-30</time>
+              <time title="创建时间：2019-03-30 22:24:14 / 修改时间：22:28:58" itemprop="dateCreated datePublished" datetime="2019-03-30T22:24:14+08:00">2019-03-30</time>
             
 
             
@@ -438,7 +438,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/技术/" itemprop="url" rel="index"><span itemprop="name">技术</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/动态规划/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a></span>
 
                 
                 
@@ -459,6 +459,8 @@
           
 
           
+            <div class="post-description">树形dp</div>
+          
 
         </div>
       </header>
@@ -473,14 +475,13 @@
       
 
       
-        <p>怎么写blog？？？</p>
-<p>用cd定位到hexo目录，执行</p>
-<p>hexo new ‘my-first-blog’</p>
-<p>然后会在post文件夹生成md文件</p>
-<p>然后打开就可以写blog了</p>
-<p>格式为</p>
-<p>title: postName #文章页面上的显示名称<br>date: 2013-12-02 15:30:16 #文章生成时间，当然可以任意修改<br>categories: 默认分类 #分类<br>tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格</p>
-<h2 id="description-附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面"><a href="#description-附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面" class="headerlink" title="description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面"></a>description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</h2><p> 以下是正文</p>
+        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>有 N 个农民, 他们住在 N 个不同的村子里. 这 N 个村子形成一棵树.<br>每个农民初始时获得 X 的钱.<br>每一次操作, 一个农民可以从它自己的钱中, 取出任意数量的钱, 交给某个相邻村子的农民.<br>对于每个农民给定一个值 v_i, 求<br>     最少需要多少次操作, 使得每个农民最终拿到的钱 &gt;= 给定的值v_i.</p>
+<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第1行: 一个整数 N (1 &lt;= N &lt;= 2000)<br>第2行: 一个整数 X (0 &lt;= X &lt;= 10000)<br>第3行: N 个整数, 表示 v_i. 保证所有 v_i 的和 &lt;= N * X<br>第4..N+2行: 每行两个 1..N 的数, 表示树上的一条边. 边是双向的.</p>
+<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>第1行: 一个整数, 最少需要的操作次数</p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p>6<br>15<br>10 20 18 16 6 16<br>1 4<br>4 5<br>4 6<br>6 2<br>5 3</p>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p>5</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const long long N = 2009 , INF = 36028797018963968;</span><br><span class="line"></span><br><span class="line">long long n , m , a[N] , size[N] , f[N][N] , g[N];</span><br><span class="line">struct Edge&#123;long long to , nxt;&#125; e[N &lt;&lt; 1];</span><br><span class="line">long long head[N] , tot = 0;</span><br><span class="line"></span><br><span class="line">void addedge(long long x , long long y) &#123;e[++tot].to = y , e[tot].nxt = head[x] , head[x] = tot;&#125;</span><br><span class="line"></span><br><span class="line">long long read() &#123;</span><br><span class="line">	long long s = 0 ,w = 1; char ch = getchar();</span><br><span class="line">	while(ch &lt; 48 || ch &gt; 57) &#123;if(ch == &apos;-&apos;) w = -1; ch = getchar();&#125;</span><br><span class="line">	while(ch &gt;= 48 &amp;&amp; ch &lt;= 57) s = (s &lt;&lt; 1) + (s &lt;&lt; 3) + (ch ^ 48) , ch = getchar();</span><br><span class="line">	return s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void dfs(long long u , long long par) &#123;</span><br><span class="line">	size[u] = 1;</span><br><span class="line">	f[u][0] = f[u][1] = m - a[u];</span><br><span class="line">	</span><br><span class="line">	for(int i = head[u] ; i ; i = e[i].nxt)</span><br><span class="line">		if(e[i].to != par) &#123;</span><br><span class="line">			long long v = e[i].to;</span><br><span class="line">			dfs(v , u);</span><br><span class="line">			</span><br><span class="line">			for(int j = 0 ; j &lt; size[u] ; j ++ ) g[j] = f[u][j];</span><br><span class="line">			for(int j = 0 ; j &lt; size[u] + size[v] ; j ++ ) f[u][j] = - INF; </span><br><span class="line">			</span><br><span class="line">			for(int v1 = 0 ; v1 &lt; size[u] ; v1 ++)</span><br><span class="line">				for(int v2 = 0 ; v2 &lt; size[v] ; v2 ++) &#123;</span><br><span class="line">					if(f[v][v2] &gt;= 0) f[u][v1 + v2] = max(f[u][v1 + v2] , g[v1]); </span><br><span class="line">					f[u][v1 + v2 + 1] = max(f[u][v1 + v2 + 1] , f[v][v2] + g[v1]);</span><br><span class="line">				&#125;</span><br><span class="line">			size[u] += size[v];</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;		</span><br><span class="line">	n = read() , m = read();</span><br><span class="line">	for(int i = 1 ; i &lt;= n ; i ++) a[i] = read();</span><br><span class="line">	for(int i = 1 ; i &lt; n ; i ++) &#123;</span><br><span class="line">		int x = read() , y = read();</span><br><span class="line">		addedge(x , y) ; addedge(y , x);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	dfs(1 , 0);</span><br><span class="line">	for(int i = 0 ; i &lt; n  ; i ++)</span><br><span class="line">		if(f[1][i] &gt;= 0) &#123;</span><br><span class="line">			printf(&quot;%lld\n&quot;,i);</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr>
 
       
     </div>
@@ -511,15 +512,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2019/03/30/基础位运算/" rel="next" title="基础位运算">
+                <i class="fa fa-chevron-left"></i> 基础位运算
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/30/基础位运算/" rel="prev" title="基础位运算">
-                基础位运算 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -645,7 +646,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#description-附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面"><span class="nav-number">1.</span> <span class="nav-text">description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">6.</span> <span class="nav-text">Code</span></a></li></ol></div>
             
 
           </div>
