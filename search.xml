@@ -19,7 +19,7 @@
   <entry>
     <title><![CDATA[How to write a blog]]></title>
     <url>%2F2019%2F03%2F30%2Fmy-first-blog%2F</url>
-    <content type="text"><![CDATA[怎么写blog？？？ 用cd定位到hexo目录，执行 hexo new ‘my-first-blog’ 然后会在post文件夹生成md文件 然后打开就可以写blog了 格式为 title: postName #文章页面上的显示名称date: 2013-12-02 15:30:16 #文章生成时间，当然可以任意修改categories: 默认分类 #分类tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格 description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面 以下是正文]]></content>
+    <content type="text"><![CDATA[怎么写blog？？？用cd定位到hexo目录，执行hexo new ‘my-first-blog’ 然后会在post文件夹生成md文件 然后打开就可以写blog了 格式为title: postName #文章页面上的显示名称date: 2013-12-02 15:30:16文章生成时间，当然可以任意修改categories: 默认分类 #分类tags: [tag1,tag2,tag3] #文章标签，可空，多标签请用格式，注意:后面有个空格description: 附加一段文章摘要，字数最好在140字以内，会出现在meta的description里面 以下是正文]]></content>
       <categories>
         <category>技术</category>
       </categories>
