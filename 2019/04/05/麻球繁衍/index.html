@@ -100,25 +100,25 @@
 
 
 
-  <meta name="description" content="树形dp">
-<meta name="keywords" content="动态规划,dp,树形dp">
+  <meta name="description" content="概率dp">
+<meta name="keywords" content="动态规划,dp,概率&#x2F;期望dp">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BZOJ 3090 podjela">
-<meta property="og:url" content="https://bmh201708.github.io/2019/03/30/BZOJ-3090-podjela/index.html">
+<meta property="og:title" content="麻球繁衍">
+<meta property="og:url" content="https://bmh201708.github.io/2019/04/05/麻球繁衍/index.html">
 <meta property="og:site_name" content="bmh201708的博客">
-<meta property="og:description" content="树形dp">
+<meta property="og:description" content="概率dp">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-04T09:14:45.250Z">
+<meta property="og:updated_time" content="2019-04-05T04:45:05.820Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BZOJ 3090 podjela">
-<meta name="twitter:description" content="树形dp">
+<meta name="twitter:title" content="麻球繁衍">
+<meta name="twitter:description" content="概率dp">
 
 
 
 
 
 
-  <link rel="canonical" href="https://bmh201708.github.io/2019/03/30/BZOJ-3090-podjela/">
+  <link rel="canonical" href="https://bmh201708.github.io/2019/04/05/麻球繁衍/">
 
 
 
@@ -128,7 +128,7 @@
   };
 </script>
 
-  <title>BZOJ 3090 podjela | bmh201708的博客</title>
+  <title>麻球繁衍 | bmh201708的博客</title>
   
 
 
@@ -390,7 +390,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://bmh201708.github.io/2019/03/30/BZOJ-3090-podjela/">
+    <link itemprop="mainEntityOfPage" href="https://bmh201708.github.io/2019/04/05/麻球繁衍/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="jyk">
@@ -407,7 +407,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">BZOJ 3090 podjela
+          <h1 class="post-title" itemprop="name headline">麻球繁衍
 
               
             
@@ -433,46 +433,16 @@
                 
               
 
-              <time title="创建时间：2019-03-30 22:24:14" itemprop="dateCreated datePublished" datetime="2019-03-30T22:24:14+08:00">2019-03-30</time>
+              <time title="创建时间：2019-04-05 12:32:16 / 修改时间：12:45:05" itemprop="dateCreated datePublished" datetime="2019-04-05T12:32:16+08:00">2019-04-05</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2019-04-04 17:14:45" itemprop="dateModified" datetime="2019-04-04T17:14:45+08:00">2019-04-04</time>
               
             
           </span>
 
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/动态规划/" itemprop="url" rel="index"><span itemprop="name">动态规划</span></a></span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -503,7 +473,7 @@
                 
                   <span class="post-meta-item-text">本文字数：</span>
                 
-                <span title="本文字数">2.1k</span>
+                <span title="本文字数">1.4k</span>
               
 
               
@@ -517,13 +487,13 @@
                 
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
-                <span title="阅读时长">2 分钟</span>
+                <span title="阅读时长">1 分钟</span>
               
             </div>
           
 
           
-            <div class="post-description">树形dp</div>
+            <div class="post-description">概率dp</div>
           
 
         </div>
@@ -539,12 +509,14 @@
       
 
       
-        <h2 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h2><p>有 N 个农民, 他们住在 N 个不同的村子里. 这 N 个村子形成一棵树.<br>每个农民初始时获得 X 的钱.<br>每一次操作, 一个农民可以从它自己的钱中, 取出任意数量的钱, 交给某个相邻村子的农民.<br>对于每个农民给定一个值 v_i, 求<br>     最少需要多少次操作, 使得每个农民最终拿到的钱 &gt;= 给定的值v_i.</p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第1行: 一个整数 N (1 &lt;= N &lt;= 2000)<br>第2行: 一个整数 X (0 &lt;= X &lt;= 10000)<br>第3行: N 个整数, 表示 v_i. 保证所有 v_i 的和 &lt;= N * X<br>第4..N+2行: 每行两个 1..N 的数, 表示树上的一条边. 边是双向的.</p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>第1行: 一个整数, 最少需要的操作次数</p>
-<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p>6<br>15<br>10 20 18 16 6 16<br>1 4<br>4 5<br>4 6<br>6 2<br>5 3</p>
-<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p>5</p>
-<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const long long N = 2009 , INF = 36028797018963968;</span><br><span class="line"></span><br><span class="line">long long n , m , a[N] , size[N] , f[N][N] , g[N];</span><br><span class="line">struct Edge&#123;long long to , nxt;&#125; e[N &lt;&lt; 1];</span><br><span class="line">long long head[N] , tot = 0;</span><br><span class="line"></span><br><span class="line">void addedge(long long x , long long y) &#123;e[++tot].to = y , e[tot].nxt = head[x] , head[x] = tot;&#125;</span><br><span class="line"></span><br><span class="line">long long read() &#123;</span><br><span class="line">	long long s = 0 ,w = 1; char ch = getchar();</span><br><span class="line">	while(ch &lt; 48 || ch &gt; 57) &#123;if(ch == &apos;-&apos;) w = -1; ch = getchar();&#125;</span><br><span class="line">	while(ch &gt;= 48 &amp;&amp; ch &lt;= 57) s = (s &lt;&lt; 1) + (s &lt;&lt; 3) + (ch ^ 48) , ch = getchar();</span><br><span class="line">	return s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void dfs(long long u , long long par) &#123;</span><br><span class="line">	size[u] = 1;</span><br><span class="line">	f[u][0] = f[u][1] = m - a[u];</span><br><span class="line">	</span><br><span class="line">	for(int i = head[u] ; i ; i = e[i].nxt)</span><br><span class="line">		if(e[i].to != par) &#123;</span><br><span class="line">			long long v = e[i].to;</span><br><span class="line">			dfs(v , u);</span><br><span class="line">			</span><br><span class="line">			for(int j = 0 ; j &lt; size[u] ; j ++ ) g[j] = f[u][j];</span><br><span class="line">			for(int j = 0 ; j &lt; size[u] + size[v] ; j ++ ) f[u][j] = - INF; </span><br><span class="line">			</span><br><span class="line">			for(int v1 = 0 ; v1 &lt; size[u] ; v1 ++)</span><br><span class="line">				for(int v2 = 0 ; v2 &lt; size[v] ; v2 ++) &#123;</span><br><span class="line">					if(f[v][v2] &gt;= 0) f[u][v1 + v2] = max(f[u][v1 + v2] , g[v1]); </span><br><span class="line">					f[u][v1 + v2 + 1] = max(f[u][v1 + v2 + 1] , f[v][v2] + g[v1]);</span><br><span class="line">				&#125;</span><br><span class="line">			size[u] += size[v];</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main() &#123;		</span><br><span class="line">	n = read() , m = read();</span><br><span class="line">	for(int i = 1 ; i &lt;= n ; i ++) a[i] = read();</span><br><span class="line">	for(int i = 1 ; i &lt; n ; i ++) &#123;</span><br><span class="line">		int x = read() , y = read();</span><br><span class="line">		addedge(x , y) ; addedge(y , x);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	dfs(1 , 0);</span><br><span class="line">	for(int i = 0 ; i &lt; n  ; i ++)</span><br><span class="line">		if(f[1][i] &gt;= 0) &#123;</span><br><span class="line">			printf(&quot;%lld\n&quot;,i);</span><br><span class="line">			return 0;</span><br><span class="line">		&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h1><p>你有一坨K个麻球.<br>这些麻球每天都会挂，挂之前繁衍n个麻球.<br>繁衍i个的概率为p[i] 0 &lt;= i &lt; n;</p>
+<h1 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h1><p>输入包含多组数据。<br>输入文件的第1行是一个正整数N，表示数据组数。<br>每组数据的第1行有3个正整数n(1&lt;=n&lt;=1000),k(0&lt;=k&lt;=1000),m(0&lt;=m&lt;=1000)。<br>接下来有n行，给出P_0,P_1,…,P_n-1。</p>
+<h1 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h1><p>对于第i组数据，输出”Case #i: “，后面是第m天后所有毛球均已死亡的概率。</p>
+<h1 id="输出提示"><a href="#输出提示" class="headerlink" title="输出提示"></a>输出提示</h1><p>如果你的输出与标准答案相差不超过10^-5，那么你的答案就被认为是正确的。</p>
+<h1 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">3 1 1</span><br><span class="line">0.33</span><br><span class="line">0.34</span><br><span class="line">0.33</span><br><span class="line">3 1 2</span><br><span class="line">0.33</span><br><span class="line">0.34</span><br><span class="line">0.33</span><br><span class="line">3 1 2</span><br><span class="line">0.5</span><br><span class="line">0.0</span><br><span class="line">0.5</span><br><span class="line">4 2 2</span><br><span class="line">0.5</span><br><span class="line">0.0</span><br><span class="line">0.0   </span><br><span class="line">0.5</span><br></pre></td></tr></table></figure>
+<h1 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Case #1: 0.3300000</span><br><span class="line">Case #2: 0.4781370</span><br><span class="line">Case #3: 0.6250000</span><br><span class="line">Case #4: 0.3164063</span><br></pre></td></tr></table></figure>
+<h1 id="solution"><a href="#solution" class="headerlink" title="solution"></a>solution</h1><p>因为每个麻球是独立的，没有任何区别，所以用f[i]表示1个麻球第i天或第i天之前死光的概率<br>f[i] = sigma{p[j] * f[i - 1]^j }(0 &lt;= j &lt; n);<br>j表示麻球繁衍了j个麻球yesturday全部go die<br>根据乘法原理可得这种情况的概率为f[i - 1]^j</p>
+<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int N = 1005;</span><br><span class="line"></span><br><span class="line">int T , n , m , K;</span><br><span class="line">double p[N] , f[N];</span><br><span class="line"></span><br><span class="line">double qpow(double x , int y) &#123;</span><br><span class="line">	double res = x , ans = 1;</span><br><span class="line">	while(y) &#123;</span><br><span class="line">		if(y &amp; 1) ans *= res;</span><br><span class="line">		y &gt;&gt;= 1;</span><br><span class="line">		res *= res; </span><br><span class="line">	&#125; return ans;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	for(int Case = 1 ; Case &lt;= T ; Case ++) &#123;</span><br><span class="line">		scanf(&quot;%d%d%d&quot;,&amp;n,&amp;K,&amp;m);</span><br><span class="line">		for(int i = 0 ; i &lt; n ; i ++) scanf(&quot;%lf&quot;,&amp;p[i]);</span><br><span class="line">		memset(f , 0 , sizeof(f));</span><br><span class="line">		f[1] = p[0];</span><br><span class="line">		for(int i = 2 ; i &lt;= m ; i ++)	</span><br><span class="line">			for(int j = 0 ; j &lt; n ; j ++)</span><br><span class="line">				f[i] += qpow(f[i - 1] , j) * p[j];</span><br><span class="line">		printf(&quot;Case #%d: %.7lf\n&quot;,Case,qpow(f[m] , K));</span><br><span class="line">			</span><br><span class="line">	&#125;</span><br><span class="line">	return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
 
       
@@ -571,7 +543,7 @@
           
             <a href="/tags/动态规划-dp/" rel="tag"># 动态规划,dp</a>
           
-            <a href="/tags/树形dp/" rel="tag"># 树形dp</a>
+            <a href="/tags/概率-期望dp/" rel="tag"># 概率/期望dp</a>
           
         </div>
       
@@ -604,8 +576,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/30/基础位运算/" rel="next" title="基础位运算">
-                <i class="fa fa-chevron-left"></i> 基础位运算
+              <a href="/2019/04/04/炮兵阵地/" rel="next" title="NOI2001 炮兵阵地">
+                <i class="fa fa-chevron-left"></i> NOI2001 炮兵阵地
               </a>
             
           </div>
@@ -613,10 +585,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/31/八下化学/" rel="prev" title="八下化学">
-                八下化学 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -855,7 +823,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输入"><span class="nav-number">4.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#样例输出"><span class="nav-number">5.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code"><span class="nav-number">6.</span> <span class="nav-text">Code</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题描述"><span class="nav-number">1.</span> <span class="nav-text">问题描述</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输入格式"><span class="nav-number">2.</span> <span class="nav-text">输入格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出格式"><span class="nav-number">3.</span> <span class="nav-text">输出格式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#输出提示"><span class="nav-number">4.</span> <span class="nav-text">输出提示</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输入"><span class="nav-number">5.</span> <span class="nav-text">样例输入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#样例输出"><span class="nav-number">6.</span> <span class="nav-text">样例输出</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#solution"><span class="nav-number">7.</span> <span class="nav-text">solution</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">8.</span> <span class="nav-text">code</span></a></li></ol></div>
             
 
           </div>
