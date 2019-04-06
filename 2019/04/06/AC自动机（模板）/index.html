@@ -100,23 +100,25 @@
 
 
 
-  <meta name="description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
-<meta property="og:type" content="website">
-<meta property="og:title" content="bmh201708的博客">
-<meta property="og:url" content="https://bmh201708.github.io/tags/Diary/index.html">
+  <meta name="description" content="P3808 【模板】AC自动机（简单版）给定n个模式串和1个文本串，求有多少个模式串在文本串里出现过。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&amp;lt;bits/stdc++.h&amp;gt;using names">
+<meta name="keywords" content="模板库,AC自动机">
+<meta property="og:type" content="article">
+<meta property="og:title" content="AC自动机（模板）">
+<meta property="og:url" content="https://bmh201708.github.io/2019/04/06/AC自动机（模板）/index.html">
 <meta property="og:site_name" content="bmh201708的博客">
-<meta property="og:description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
+<meta property="og:description" content="P3808 【模板】AC自动机（简单版）给定n个模式串和1个文本串，求有多少个模式串在文本串里出现过。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&amp;lt;bits/stdc++.h&amp;gt;using names">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-06T13:04:03.900Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bmh201708的博客">
-<meta name="twitter:description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
+<meta name="twitter:title" content="AC自动机（模板）">
+<meta name="twitter:description" content="P3808 【模板】AC自动机（简单版）给定n个模式串和1个文本串，求有多少个模式串在文本串里出现过。1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859#include&amp;lt;bits/stdc++.h&amp;gt;using names">
 
 
 
 
 
 
-  <link rel="canonical" href="https://bmh201708.github.io/tags/Diary/">
+  <link rel="canonical" href="https://bmh201708.github.io/2019/04/06/AC自动机（模板）/">
 
 
 
@@ -126,7 +128,7 @@
   };
 </script>
 
-  <title>标签: Diary | bmh201708的博客</title>
+  <title>AC自动机（模板） | bmh201708的博客</title>
   
 
 
@@ -174,7 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -246,7 +248,7 @@
         
         
           
-          <li class="menu-item menu-item-tags menu-item-active">
+          <li class="menu-item menu-item-tags">
 
     
     
@@ -368,85 +370,246 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>Diary<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
+
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bmh201708.github.io/2019/04/06/AC自动机（模板）/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jyk">
+      <meta itemprop="description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bmh201708的博客">
+    </span>
+
+    
+      <header class="post-header">
+
         
-          <a class="post-title-link" href="/2019/04/04/20190404/" itemprop="url">
-            
-              <span itemprop="name">Dairy</span>
-            
-          </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">AC自动机（模板）
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-04T19:01:44+08:00" content="2019-04-04">
-          04-04
-        </time>
-      </div>
+              
+            
+          </h1>
+        
 
-    </header>
-  </article>
+        <div class="post-meta">
+          <span class="post-time">
 
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-06 21:00:34 / 修改时间：21:04:03" itemprop="dateCreated datePublished" datetime="2019-04-06T21:00:34+08:00">2019-04-06</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">4k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">4 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>P3808 【模板】AC自动机（简单版）<br>给定n个模式串和1个文本串，求有多少个模式串在文本串里出现过。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int N = 1e6 + 5;</span><br><span class="line"></span><br><span class="line">int n ;</span><br><span class="line">char a[N] , tmp[N];</span><br><span class="line">struct AC_automaton &#123;</span><br><span class="line">    </span><br><span class="line">    int t[N][26] , e[N] , fail[N] , cnt;</span><br><span class="line">    </span><br><span class="line">    void insert(char *s) &#123;</span><br><span class="line">        int p = 0 , len = strlen(s);</span><br><span class="line">        for(int i = 0 ; i &lt; len ; i ++) &#123;</span><br><span class="line">            int k = s[i] - &apos;a&apos;;</span><br><span class="line">            while(!t[p][k]) t[p][k] = ++ cnt;</span><br><span class="line">            p = t[p][k];</span><br><span class="line">        &#125;</span><br><span class="line">        e[p] ++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void build() &#123;</span><br><span class="line">        queue &lt;int&gt; q;</span><br><span class="line">        memset(fail , 0, sizeof(fail));</span><br><span class="line">        for(int i = 0 ; i &lt; 26 ; i ++) if(t[0][i]) q.push(t[0][i]);</span><br><span class="line">        while(!q.empty()) &#123;</span><br><span class="line">            int k = q.front(); q.pop();</span><br><span class="line">            for(int i = 0 ; i &lt; 26 ; i ++) &#123;</span><br><span class="line">                if(t[k][i]) &#123;</span><br><span class="line">                    fail[t[k][i]] = t[fail[k]][i];</span><br><span class="line">                    q.push(t[k][i]);</span><br><span class="line">                &#125; else t[k][i] = t[fail[k]][i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    int query(char *s) &#123;</span><br><span class="line">        int p = 0 , res = 0;</span><br><span class="line">        for(int i = 0 ; s[i] ; i ++) &#123;</span><br><span class="line">            p = t[p][s[i] - &apos;a&apos;];</span><br><span class="line">            for(int j = p ; j &amp;&amp; e[j]!=-1 ; j = fail[j]) res += e[j] , e[j] = -1;</span><br><span class="line">        &#125;</span><br><span class="line">        return res;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125; ac; </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    scanf(&quot;%d&quot;,&amp;n);</span><br><span class="line">    while(n -- ) &#123;</span><br><span class="line">        scanf(&quot;%s&quot;,tmp);</span><br><span class="line">        //cout &lt;&lt; tmp &lt;&lt; endl;</span><br><span class="line">        ac.insert(tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    ac.build();</span><br><span class="line">    scanf(&quot;%s&quot;,a);</span><br><span class="line">    printf(&quot;%d\n&quot;,ac.query(a));</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>P3796 【模板】AC自动机（加强版）<br>对于每组数据，第一行输出模式串最多出现的次数，接下去若干行每行输出一个出现次数最多的模式串，按输入顺序排列。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int N = 1e6 + 9;</span><br><span class="line">int n;</span><br><span class="line">int q[N] ;</span><br><span class="line">char a[N] , tmp[151][71];</span><br><span class="line"></span><br><span class="line">struct Result &#123;int id , num;&#125; ans[155];</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">struct AC_automaton &#123;</span><br><span class="line">    int t[N][26] , e[N] , fail[N] , cnt;</span><br><span class="line">    </span><br><span class="line">    void clear() &#123;</span><br><span class="line">        for(int i = 1 ; i &lt;= 150 ; i ++) ans[i].id = i , ans[i].num = 0;</span><br><span class="line">        memset(t , 0 , sizeof(t));</span><br><span class="line">        memset(fail , 0 , sizeof(fail));</span><br><span class="line">        memset(e , 0, sizeof(q));</span><br><span class="line">        cnt = 0;</span><br><span class="line">    &#125;</span><br><span class="line">    void insert(int x , char *s) &#123;</span><br><span class="line">        int p = 0;</span><br><span class="line">        for(int i = 0 ; s[i] ; i ++) &#123;</span><br><span class="line">            int k = s[i] - &apos;a&apos;;</span><br><span class="line">            if(!t[p][k]) t[p][k] = ++cnt;</span><br><span class="line">            p = t[p][k];</span><br><span class="line">        &#125;</span><br><span class="line">        e[p] = x;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void build() &#123;</span><br><span class="line">        int l = 1 , r = 0;</span><br><span class="line">        for(int i = 0 ; i &lt; 26 ; i ++) if(t[0][i]) q[++r] = t[0][i];</span><br><span class="line">        while(l &lt;= r) &#123;</span><br><span class="line">            int k = q[l ++];</span><br><span class="line">            for(int i = 0 ; i &lt; 26 ; i ++) &#123;</span><br><span class="line">                if(t[k][i]) &#123;</span><br><span class="line">                    fail[t[k][i]] = t[fail[k]][i];</span><br><span class="line">                    q[++r] = t[k][i];</span><br><span class="line">                &#125; else t[k][i] = t[fail[k]][i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void query(char *s) &#123;</span><br><span class="line">        int p = 0 , len = strlen(s);</span><br><span class="line">        for(int i = 0 ; i &lt; len ; i ++) &#123;</span><br><span class="line">            p = t[p][s[i] - &apos;a&apos;];</span><br><span class="line">            for(int j = p ; j ; j = fail[j]) ans[e[j]].num ++ ;</span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;</span><br><span class="line">&#125; ;</span><br><span class="line">AC_automaton ac;</span><br><span class="line"></span><br><span class="line">bool cmp(Result A , Result B) &#123;</span><br><span class="line">    if(A.num == B.num) return A.id &lt; B.id;</span><br><span class="line">    return A.num &gt; B.num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    while(scanf(&quot;%d&quot;,&amp;n)) &#123;</span><br><span class="line">        if(!n) return 0;</span><br><span class="line">        ac.clear();</span><br><span class="line">        for(int i = 1 ; i &lt;= n ; i ++) &#123;</span><br><span class="line">            scanf(&quot;%s&quot; , tmp[i]);</span><br><span class="line">            ac.insert(i , tmp[i]);</span><br><span class="line">        &#125; scanf(&quot;%s&quot;,a);</span><br><span class="line">        ac.build();</span><br><span class="line">        ac.query(a);</span><br><span class="line">        sort(ans + 1 , ans + n + 1 , cmp);</span><br><span class="line">        printf(&quot;%d\n&quot;,ans[1].num);</span><br><span class="line">        printf(&quot;%s\n&quot;,tmp[ans[1].id]);</span><br><span class="line">        int i = 2;</span><br><span class="line">        while(ans[i].num == ans[1].num) printf(&quot;%s\n&quot;,tmp[ans[i ++].id]);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/模板库/" rel="tag"># 模板库</a>
+          
+            <a href="/tags/AC自动机/" rel="tag"># AC自动机</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/06/树链剖分（模板）/" rel="next" title="树链剖分（模板）">
+                <i class="fa fa-chevron-left"></i> 树链剖分（模板）
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/06/读入-输出优化（模板）/" rel="prev" title="读入/输出优化（模板）">
+                读入/输出优化（模板） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzU4MS8yMDEyMA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -838,6 +1001,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -848,6 +1015,23 @@
   
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/06/AC自动机（模板）/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
