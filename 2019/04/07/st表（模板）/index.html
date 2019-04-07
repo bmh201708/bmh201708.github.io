@@ -100,23 +100,25 @@
 
 
 
-  <meta name="description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
-<meta property="og:type" content="website">
-<meta property="og:title" content="bmh201708的博客">
-<meta property="og:url" content="https://bmh201708.github.io/archives/2019/04/index.html">
+  <meta name="description" content="静态区间最大值123456789101112131415161718192021222324252627282930313233343536#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;const int N = 1e6 + 5;int n , T , f[N][25];inline int read() &amp;#123;	int s = 0 ,w">
+<meta name="keywords" content="模板库,st表">
+<meta property="og:type" content="article">
+<meta property="og:title" content="st表（模板）">
+<meta property="og:url" content="https://bmh201708.github.io/2019/04/07/st表（模板）/index.html">
 <meta property="og:site_name" content="bmh201708的博客">
-<meta property="og:description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
+<meta property="og:description" content="静态区间最大值123456789101112131415161718192021222324252627282930313233343536#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;const int N = 1e6 + 5;int n , T , f[N][25];inline int read() &amp;#123;	int s = 0 ,w">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-04-07T06:00:35.385Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="bmh201708的博客">
-<meta name="twitter:description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
+<meta name="twitter:title" content="st表（模板）">
+<meta name="twitter:description" content="静态区间最大值123456789101112131415161718192021222324252627282930313233343536#include&amp;lt;bits/stdc++.h&amp;gt;using namespace std;const int N = 1e6 + 5;int n , T , f[N][25];inline int read() &amp;#123;	int s = 0 ,w">
 
 
 
 
 
 
-  <link rel="canonical" href="https://bmh201708.github.io/archives/2019/04/">
+  <link rel="canonical" href="https://bmh201708.github.io/2019/04/07/st表（模板）/">
 
 
 
@@ -126,7 +128,7 @@
   };
 </script>
 
-  <title>归档 | bmh201708的博客</title>
+  <title>st表（模板） | bmh201708的博客</title>
   
 
 
@@ -174,7 +176,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,7 +265,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
 
     
     
@@ -368,426 +370,241 @@
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://bmh201708.github.io/2019/04/07/st表（模板）/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="jyk">
+      <meta itemprop="description" content="人生就是在做动态规划，你的每一步决策将你从一个状态转移到另一个状态。你当前的决策不一定是最优的，但努力奋斗能带给你的是未来更多的可能性。 ——By 某个Dalao">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="bmh201708的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">st表（模板）
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-04-07 14:00:04 / 修改时间：14:00:35" itemprop="dateCreated datePublished" datetime="2019-04-07T14:00:04+08:00">2019-04-07</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="post-meta-item-icon">
+            <i class="fa fa-eye"></i>
+             阅读次数： 
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">本文字数：</span>
+                
+                <span title="本文字数">1.1k</span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">1 分钟</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      <span class="archive-page-counter">
+      
+
+      
+        <p>静态区间最大值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;bits/stdc++.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">const int N = 1e6 + 5;</span><br><span class="line"></span><br><span class="line">int n , T , f[N][25];</span><br><span class="line"></span><br><span class="line">inline int read() &#123;</span><br><span class="line">	int s = 0 ,w = 1; char ch = getchar();</span><br><span class="line">	while(ch &lt; 48 || ch &gt; 57) &#123;if(ch == &apos;-&apos;) w = -1; ch = getchar();&#125;</span><br><span class="line">	while(ch &gt;= 48 &amp;&amp; ch &lt;= 57) s = (s &lt;&lt; 1) + (s &lt;&lt; 3) +(ch ^ 48) , ch = getchar();</span><br><span class="line">	return s * w;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline void write(int x) &#123;</span><br><span class="line">    if(x &lt; 0)putchar(&apos;-&apos;), x *= (-1);</span><br><span class="line">    if(x &gt; 9)write(x / 10);</span><br><span class="line">    putchar(x % 10 + &apos;0&apos;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">inline int query(int l , int r) &#123;</span><br><span class="line">	int k = log2(r - l + 1);</span><br><span class="line">	return max(f[l][k] , f[r - (1 &lt;&lt; k) + 1][k]);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">	n = read() , T = read();</span><br><span class="line">	for(int i = 1 ; i &lt;= n ; i ++) f[i][0] = read();</span><br><span class="line">	for(int j = 1 ; j &lt;= 20 ; j ++) </span><br><span class="line">		for(int i = 1 ; i + (1 &lt;&lt; j) - 1 &lt;= n ; i ++)	</span><br><span class="line">			f[i][j] = max(f[i][j - 1] , f[i + (1 &lt;&lt; (j - 1))][j - 1]);</span><br><span class="line">	while(T --) &#123;</span><br><span class="line">		int l = read() , r = read();</span><br><span class="line">		write(query(l , r)) , putchar(&apos;\n&apos;);</span><br><span class="line">	&#125;</span><br><span class="line">	return 0 ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<hr>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/模板库/" rel="tag"># 模板库</a>
+          
+            <a href="/tags/st表/" rel="tag"># st表</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
+
         
+
         
           
-        
-        嗯..! 目前共计 21 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          <div class="social_share">
+            
+            
+              <div id="needsharebutton-postbottom">
+                <span class="btn">
+                  <i class="fa fa-share-alt" aria-hidden="true"></i>
+                </span>
+              </div>
+            
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/07/st表（模板）/" itemprop="url">
-            
-              <span itemprop="name">st表（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-07T14:00:04+08:00" content="2019-04-07">
-          04-07
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/读入-输出优化（模板）/" itemprop="url">
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span itemprop="name">读入/输出优化（模板）</span>
+              <a href="/2019/04/06/读入-输出优化（模板）/" rel="next" title="读入/输出优化（模板）">
+                <i class="fa fa-chevron-left"></i> 读入/输出优化（模板）
+              </a>
             
-          </a>
-        
-      </h2>
+          </div>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T21:07:55+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
+          <span class="post-nav-divider"></span>
 
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/AC自动机（模板）/" itemprop="url">
-            
-              <span itemprop="name">AC自动机（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T21:00:34+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/树链剖分（模板）/" itemprop="url">
-            
-              <span itemprop="name">树链剖分（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T20:56:17+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/scapecoat/" itemprop="url">
-            
-              <span itemprop="name">scapecoat（替罪羊树）（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T20:54:22+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/fhq-treap/" itemprop="url">
-            
-              <span itemprop="name">fhq_treap（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T20:52:42+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/splay/" itemprop="url">
-            
-              <span itemprop="name">splay（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T20:45:33+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/涂格子1/" itemprop="url">
-            
-              <span itemprop="name">涂格子1</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T17:35:28+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/分块2（模板）/" itemprop="url">
-            
-              <span itemprop="name">分块2（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T17:32:05+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-          <a class="post-title-link" href="/2019/04/06/分块1（模板）/" itemprop="url">
-            
-              <span itemprop="name">分块1（模板）</span>
-            
-          </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-06T17:30:15+08:00" content="2019-04-06">
-          04-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-    </div>
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2019/04/page/2/">2</a><a class="extend next" rel="next" href="/archives/2019/04/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
-  </nav>
+  </article>
 
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzU4MS8yMDEyMA=="></div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -1181,6 +998,10 @@
 
 
   
+  <script src="/js/src/scrollspy.js?v=7.0.1"></script>
+<script src="/js/src/post-details.js?v=7.0.1"></script>
+
+
 
   
 
@@ -1191,6 +1012,23 @@
   
   
 
+
+  
+    <script>
+  window.livereOptions = {
+    refer: '2019/04/07/st表（模板）/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script>
+
+  
 
 
   
