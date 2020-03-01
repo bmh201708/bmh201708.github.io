@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://bmh201708.github.io">
   <title>珂朵莉树学习笔记 | 蒟蒻Jim&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。   实现方式：1.建树：123struct chthollyTree &amp;#123;	map &amp;lt;int , int&amp;gt; s;  &amp;#125;; 在$map$ 中我们只记录一段连续的数中最右边一个没了。 2.基本操作求下标为$x$">
+  <meta name="description" content="珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。">
 <meta name="keywords" content="珂朵莉树">
 <meta property="og:type" content="article">
 <meta property="og:title" content="珂朵莉树学习笔记">
 <meta property="og:url" content="https://bmh201708.github.io/2020/03/01/珂朵莉树学习笔记/index.html">
 <meta property="og:site_name" content="蒟蒻Jim&#39;s blog">
-<meta property="og:description" content="珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。   实现方式：1.建树：123struct chthollyTree &amp;#123;	map &amp;lt;int , int&amp;gt; s;  &amp;#125;; 在$map$ 中我们只记录一段连续的数中最右边一个没了。 2.基本操作求下标为$x$">
+<meta property="og:description" content="珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-01T02:46:46.388Z">
+<meta property="og:updated_time" content="2020-03-01T04:27:27.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="珂朵莉树学习笔记">
-<meta name="twitter:description" content="珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。   实现方式：1.建树：123struct chthollyTree &amp;#123;	map &amp;lt;int , int&amp;gt; s;  &amp;#125;; 在$map$ 中我们只记录一段连续的数中最右边一个没了。 2.基本操作求下标为$x$">
+<meta name="twitter:description" content="珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。">
   
     <link rel="alternative" href="/atom.xml" title="蒟蒻Jim&#39;s blog" type="application/atom+xml">
   
@@ -175,9 +175,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p>珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。<br>由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。  </p>
-<h4 id="实现方式："><a href="#实现方式：" class="headerlink" title="实现方式："></a>实现方式：</h4><p>1.建树：<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">chthollyTree</span> &#123;</span></span><br><span class="line">	<span class="built_in">map</span> &lt;<span class="keyword">int</span> , <span class="keyword">int</span>&gt; s;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+        <p>珂朵莉树(ODT)大致定义：用$map/set$把一个序列中相同的一段数字压缩成一个点。<br>由其定义可以知道珂朵莉树的适用范围：题目中必须有区间赋值操作且数据随机。  </p>
+<a id="more"></a>
+<h4 id="实现方式："><a href="#实现方式：" class="headerlink" title="实现方式："></a>实现方式：</h4><p>1.建树：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">struct chthollyTree &#123;</span><br><span class="line">	map &lt;int , int&gt; s;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
 <p>在$map$ 中我们只记录一段连续的数中最右边一个<br>没了。</p>
 <p>2.基本操作<br>求下标为$x$的值<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">I <span class="keyword">int</span> <span class="title">find</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> s.lower_bound(x) -&gt; second</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>将$x$位置分裂<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">split</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> pos = find(p);</span><br><span class="line">  s[p] = pos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -360,7 +360,6 @@
 
   
 
-
           </div>
         </div>
       </div>
@@ -451,11 +450,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">珂朵莉树</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,10 +467,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">化学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
@@ -616,5 +615,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
