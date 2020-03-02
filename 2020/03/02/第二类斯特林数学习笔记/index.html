@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="蒟蒻Jim&#39;s blog">
 <meta property="og:description" content="第二类斯特林数$S_2(n , k)$表示将$n$个元素划分成$m$个非空无标号集合的方案数。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-02T05:14:10.390Z">
+<meta property="og:updated_time" content="2020-03-02T05:26:27.534Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="第二类斯特林数学习笔记">
 <meta name="twitter:description" content="第二类斯特林数$S_2(n , k)$表示将$n$个元素划分成$m$个非空无标号集合的方案数。">
@@ -202,7 +202,7 @@ S_2(n , k) = \sum_{i=0}^{k} \frac{(-1)^i}{i!} \times \frac{(k - i) ^ n}{(k - i)!
 <p>考虑生成函数</p>
 <script type="math/tex; mode=display">
 F(x) = \sum_{i=0}\frac{(-1)^i}{i!}x ^i</script><script type="math/tex; mode=display">
-G(x) = \sum_{i=0}\frac{(k - i) ^ n}{(k - i)!} x ^ i</script><p>则 </p>
+G(x) = \sum_{i=0}\frac{i ^ n}{i!} x ^ i</script><p>则 </p>
 <script type="math/tex; mode=display">
 S_2(x) = F(x) * G(x)</script><p>顺便可以过<a href="https://www.luogu.com.cn/problem/P5395" target="_blank" rel="noopener">洛谷P5395</a></p>
 
