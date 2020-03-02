@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://bmh201708.github.io">
   <title>常系数非线性齐次递推学习笔记 | 蒟蒻Jim&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个东西的用处通常是在非线性的时间内求出这样的式子：      f_i = \sum_{j=1}^{k} f_{i-j}\times g_j容易想到一个普通的矩阵乘法，时间复杂度$O(k^3logk)$但是，有时候这样的复杂度是不够的，于是我们需要优化。 前置知识：特征值，特征向量，特征多项式 特征值：若存在常数$\lambda$和向量$\vec{v}$，满足$\lambda A = \vec{v">
+  <meta name="description" content="这个东西的用处通常是在非线性的时间内求出这样的式子：      f_i = \sum_{j=1}^{k} f_{i-j}\times g_j">
 <meta name="keywords" content="向量,矩阵,常系数线性齐次递推">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常系数非线性齐次递推学习笔记">
 <meta property="og:url" content="https://bmh201708.github.io/2020/03/02/常系数非线性齐次递推学习笔记/index.html">
 <meta property="og:site_name" content="蒟蒻Jim&#39;s blog">
-<meta property="og:description" content="这个东西的用处通常是在非线性的时间内求出这样的式子：      f_i = \sum_{j=1}^{k} f_{i-j}\times g_j容易想到一个普通的矩阵乘法，时间复杂度$O(k^3logk)$但是，有时候这样的复杂度是不够的，于是我们需要优化。 前置知识：特征值，特征向量，特征多项式 特征值：若存在常数$\lambda$和向量$\vec{v}$，满足$\lambda A = \vec{v">
+<meta property="og:description" content="这个东西的用处通常是在非线性的时间内求出这样的式子：      f_i = \sum_{j=1}^{k} f_{i-j}\times g_j">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-02T08:33:08.562Z">
+<meta property="og:updated_time" content="2020-03-02T08:41:41.079Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="常系数非线性齐次递推学习笔记">
-<meta name="twitter:description" content="这个东西的用处通常是在非线性的时间内求出这样的式子：      f_i = \sum_{j=1}^{k} f_{i-j}\times g_j容易想到一个普通的矩阵乘法，时间复杂度$O(k^3logk)$但是，有时候这样的复杂度是不够的，于是我们需要优化。 前置知识：特征值，特征向量，特征多项式 特征值：若存在常数$\lambda$和向量$\vec{v}$，满足$\lambda A = \vec{v">
+<meta name="twitter:description" content="这个东西的用处通常是在非线性的时间内求出这样的式子：      f_i = \sum_{j=1}^{k} f_{i-j}\times g_j">
   
     <link rel="alternative" href="/atom.xml" title="蒟蒻Jim&#39;s blog" type="application/atom+xml">
   
@@ -77,6 +77,10 @@
 	        
 				<li><a href="/tags/随笔/">随笔</a></li>
 	        
+				<li><a href="/about/">关于本站</a></li>
+	        
+				<li><a href="/categories/">联系博主</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -133,6 +137,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -150,12 +158,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 25%"><a href="/tags/随笔/">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/about/">关于本站</a></li>
+		        
+					<li style="width: 25%"><a href="/categories/">联系博主</a></li>
 		        
 				</ul>
 			</nav>
@@ -192,7 +204,8 @@
       
         <p>这个东西的用处通常是在非线性的时间内求出这样的式子：</p>
 <script type="math/tex; mode=display">
-    f_i = \sum_{j=1}^{k} f_{i-j}\times g_j</script><p>容易想到一个普通的矩阵乘法，时间复杂度$O(k^3logk)$<br>但是，有时候这样的复杂度是不够的，于是我们需要优化。</p>
+    f_i = \sum_{j=1}^{k} f_{i-j}\times g_j</script> <a id="more"></a>
+<p>容易想到一个普通的矩阵乘法，时间复杂度$O(k^3logk)$<br>但是，有时候这样的复杂度是不够的，于是我们需要优化。</p>
 <p>前置知识：特征值，特征向量，特征多项式</p>
 <p>特征值：若存在常数$\lambda$和向量$\vec{v}$，满足$\lambda A = \vec{v}A$，则称$\lambda $是$A$的特征值，$\vec{v}$是$A$的一组特征向量。</p>
 <p>特征多项式：将上式变形得到$(\lambda I-\vec{v})A=0$($I$是单位矩阵)。那么$f(x) = det(\lambda I-\vec{v})$是矩阵的特征多项式。其中， $det()$ 为行列式函数。</p>
@@ -525,6 +538,10 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
@@ -534,10 +551,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">同余</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -557,11 +570,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧拉反演</a>
+                <a href="javascript:void(0)" class="js-tag color5">整体二分</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">整体二分</a>
+                <a href="javascript:void(0)" class="js-tag color5">欧拉反演</a>
               </li>
              
               <li class="article-tag-list-item">
