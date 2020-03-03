@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="蒟蒻Jim&#39;s blog">
 <meta property="og:description" content="前言:这篇文章主要是写给我自己看的，所以比较简略。 若存在实数$x,n,p$,满足  x ^2 \equiv n \mod p则称$n$是$x$在模$p$意义下的二次剩余。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-02T08:30:15.476Z">
+<meta property="og:updated_time" content="2020-03-03T00:22:07.501Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="二次剩余学习笔记">
 <meta name="twitter:description" content="前言:这篇文章主要是写给我自己看的，所以比较简略。 若存在实数$x,n,p$,满足  x ^2 \equiv n \mod p则称$n$是$x$在模$p$意义下的二次剩余。">
@@ -231,7 +231,7 @@ x_0 ^ 2 \equiv x_1^2 \mod   p</script><script type="math/tex; mode=display">
 <p>我们直入正题——如何求二次剩余。</p>
 <p>Cipplla算法</p>
 <p>随机一个数$a$,使得$a^2 - n$不是二次剩余，容易发现找到满足条件的数的期望次数是2次。</p>
-<p>我们将实数域推广到复数域，钦定$i \equiv a^2 - n \mod p , i\in \mathbb{C}$</p>
+<p>我们将实数域推广到复数域，钦定$i^2 \equiv a^2 - n \mod p , i\in \mathbb{C}$</p>
 <p>结论3： $(a + i) ^ {p + 1} \equiv n \mod p$</p>
 <p>(到了这一步，如果你不想看下面的证明你就可以直接去写代码了。)</p>
 <p>证明3：</p>
@@ -552,23 +552,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FFT</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">概率期望</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">二项式反演</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,6 +561,18 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">同余</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">FFT</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">概率期望</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -592,7 +588,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧拉反演</a>
+                <a href="javascript:void(0)" class="js-tag color1">二项式反演</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -600,11 +596,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">珂朵莉树</a>
+                <a href="javascript:void(0)" class="js-tag color3">第二类斯特林数</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">第二类斯特林数</a>
+                <a href="javascript:void(0)" class="js-tag color5">欧拉反演</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">珂朵莉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -764,8 +764,7 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div>
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -782,7 +781,8 @@ MathJax.Hub.Queue(function() {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 <!-- End: Injected MathJax -->
-<!-- hexo-inject:end --></body>
+<!-- hexo-inject:end -->
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
 
