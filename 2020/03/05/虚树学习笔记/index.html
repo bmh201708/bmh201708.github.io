@@ -6,18 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://bmh201708.github.io">
-  <title>Tag: 二项式反演 | 蒟蒻Jim&#39;s blog</title>
+  <title>虚树学习笔记 | 蒟蒻Jim&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="这个人很懒，什么都没留下......">
-<meta property="og:type" content="website">
-<meta property="og:title" content="蒟蒻Jim&#39;s blog">
-<meta property="og:url" content="https://bmh201708.github.io/tags/二项式反演/index.html">
+  <meta name="description" content="先看一道例题SDOI2011消耗战">
+<meta name="keywords" content="虚树,树形dp">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚树学习笔记">
+<meta property="og:url" content="https://bmh201708.github.io/2020/03/05/虚树学习笔记/index.html">
 <meta property="og:site_name" content="蒟蒻Jim&#39;s blog">
-<meta property="og:description" content="这个人很懒，什么都没留下......">
+<meta property="og:description" content="先看一道例题SDOI2011消耗战">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://img-blog.csdn.net/20180917153315574?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzUxNzM5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://img-blog.csdn.net/20180917153645627?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzUxNzM5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
+<meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/ac4vofg6.png?x-oss-process=image/resize,m_lfit,h_170,w_225">
+<meta property="og:updated_time" content="2020-03-05T05:17:06.518Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蒟蒻Jim&#39;s blog">
-<meta name="twitter:description" content="这个人很懒，什么都没留下......">
+<meta name="twitter:title" content="虚树学习笔记">
+<meta name="twitter:description" content="先看一道例题SDOI2011消耗战">
+<meta name="twitter:image" content="https://img-blog.csdn.net/20180917153315574?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzUxNzM5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70">
   
     <link rel="alternative" href="/atom.xml" title="蒟蒻Jim&#39;s blog" type="application/atom+xml">
   
@@ -188,65 +194,235 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-虚树学习笔记" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/02/二项式反演入门/" class="archive-article-date">
-  	<time datetime="2020-03-02T08:30:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/二项式反演入门/">二项式反演入门</a>
+    <h1 class="article-title" itemprop="name">
+      虚树学习笔记
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/03/05/虚树学习笔记/" class="archive-article-date">
+  	<time datetime="2020-03-05T05:16:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先看一道例题<a href="https://www.luogu.com.cn/problem/P2495" target="_blank" rel="noopener">SDOI2011消耗战</a><br><a id="more"></a></p>
+<p>看完题目我们很容易想出$O(nm)$的树形dp，$f[u]$表示将以$u$为根的子树切断的答案 , $mn[u]$表示根到$u$的路径的最小值。</p>
+<p>有状态转移方程如下</p>
+<script type="math/tex; mode=display">
+f[u] = \sum_{v \in U} min(f[v] , mn[v])</script><p>关键节点特判一下，这样能拿50分。</p>
+<p>我们发现这颗树中关键节点的个数很少，有用的点也很少。于是我们考虑怎样将树上没有用的点删掉，节省时间，这就需要引入虚树了。</p>
+<p>虚树即是一颗虚拟构建的一棵树,这个树只包含关键点以及关键lca的点,而其他不影响虚树结构的点和边都相当于进行了路径压缩,整颗虚树的规模不会超过关键点数目的两倍.</p>
+<p>例子：<br><img src="https://img-blog.csdn.net/20180917153315574?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzUxNzM5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+<p>若关键点为1，3，7，8，那么虚树长这样</p>
+<p><img src="https://img-blog.csdn.net/20180917153645627?watermark/2/text/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl8zNzUxNzM5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70" alt></p>
+<p><del>没错我网上盗的图</del></p>
+<p>具体实现</p>
+<p>虚树的构建</p>
+<p>将关键点和他们的$lca$放入栈中，模拟$dfs$的过程，具体构建方法：</p>
+<p>先将关键点按照$dfn$排序，依次进行如下操作：</p>
+<p>设栈顶为$top$ ,栈顶的前一位$y$,要加入的点$x$，$l = lca(top , x)$</p>
+<p>由于是按照$dfn$ 排序，首先我们可以肯定$dfn_y &lt; dfn_x$</p>
+<p>如果$l = top$那么就不用管这个点$x$</p>
+<p>排除以上的情况可知$dfn_l &lt; dfn_{top} &lt; dfn_x$</p>
+<p>即下图情况</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/ac4vofg6.png?x-oss-process=image/resize,m_lfit,h_170,w_225" alt></p>
+<p>但我们不知道$y$在那里，所以需要分类讨论</p>
+<p>若$dfn_l &lt; dfn_y$ 连边$l -&gt; y$ , 弹出$x$<br>若$dfn_l &gt; dfn_y$ 连边$l -&gt; x$ , 弹出$x$ , $l$入栈<br>若$dfn_l = dfn_y$ 连边$l -&gt; x$ </p>
+<p>至此，虚树构建完成，在虚树上直接$dp$即可。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> I inline</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ri register int</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> For(i , x , y) for(ri i = x ; i &lt;= y ; ++ i)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> Next(i , x) for(ri i = head[x] ; i ; i = e[i].nxt)</span></span><br><span class="line"><span class="function">I <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span> s = <span class="number">0</span> , w = <span class="number">1</span>; <span class="keyword">char</span> ch = getchar();</span><br><span class="line">	<span class="keyword">while</span>(ch &lt; <span class="number">48</span> || ch &gt; <span class="number">57</span>) &#123;<span class="keyword">if</span>(ch == <span class="string">'-'</span>) w = <span class="number">-1</span>; ch = getchar();&#125;</span><br><span class="line">	<span class="keyword">while</span>(ch &gt;= <span class="number">48</span> &amp;&amp; ch &lt;= <span class="number">57</span>) s = (s &lt;&lt; <span class="number">1</span>) + (s &lt;&lt; <span class="number">3</span>) + (ch ^ <span class="number">48</span>) , ch = getchar();</span><br><span class="line">	<span class="keyword">return</span> s * w;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N = <span class="number">2e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> n , m , q , head[N] , tot , col , dfn[N] , f[N][<span class="number">22</span>] , depth[N] , stk[N] , top , is[N] , mn[N]; </span><br><span class="line"><span class="built_in">vector</span> &lt;<span class="keyword">int</span>&gt; v[N];</span><br><span class="line"> </span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">Edge</span>&#123;</span></span><br><span class="line">	<span class="keyword">int</span> to , nxt , w; </span><br><span class="line">&#125; e[N &lt;&lt; <span class="number">1</span>]; </span><br><span class="line"></span><br><span class="line"><span class="function">I <span class="keyword">void</span> <span class="title">addedge</span><span class="params">(<span class="keyword">int</span> x , <span class="keyword">int</span> y , <span class="keyword">int</span> z)</span> </span>&#123;</span><br><span class="line">	e[++ tot] = (Edge) &#123;y , head[x] , z&#125; , head[x] = tot;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">I <span class="keyword">bool</span> <span class="title">cmp</span><span class="params">(<span class="keyword">int</span> a , <span class="keyword">int</span> b)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> dfn[a] &lt; dfn[b] ; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u )</span> </span>&#123;</span><br><span class="line">	dfn[u] = ++ col ; </span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">1</span> ; (<span class="number">1</span> &lt;&lt; i) &lt;= depth[u]  ; ++ i) </span><br><span class="line">		f[u][i] = f[f[u][i - <span class="number">1</span>]][i - <span class="number">1</span>];</span><br><span class="line">	Next(i , u) &#123;</span><br><span class="line">		<span class="keyword">int</span> v = e[i].to;</span><br><span class="line">		<span class="keyword">if</span>(v == f[u][<span class="number">0</span>]) <span class="keyword">continue</span>;</span><br><span class="line">		mn[v] = min(mn[u] , e[i].w);</span><br><span class="line">		f[v][<span class="number">0</span>] = u ; depth[v] = depth[u] + <span class="number">1</span>;</span><br><span class="line">		dfs(v);</span><br><span class="line">	&#125;</span><br><span class="line">&#125; </span><br><span class="line"></span><br><span class="line"><span class="function">I <span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> x , <span class="keyword">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(depth[x] &lt; depth[y]) swap(x , y);</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">21</span> ; i &gt;= <span class="number">0</span> ; -- i) </span><br><span class="line">		<span class="keyword">if</span>(depth[f[x][i]] &gt;= depth[y]) x = f[x][i];</span><br><span class="line">	<span class="keyword">if</span>(x == y) <span class="keyword">return</span> x;</span><br><span class="line">	<span class="keyword">for</span>(ri i = <span class="number">21</span> ; i &gt;= <span class="number">0</span> ; -- i) </span><br><span class="line">		<span class="keyword">if</span>(f[x][i] != f[y][i]) x = f[x][i] , y = f[y][i] ;</span><br><span class="line">	<span class="keyword">return</span> f[x][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">I <span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(top == <span class="number">1</span>) &#123;</span><br><span class="line">		stk[++ top] = x ; <span class="keyword">return</span> ;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> l = lca(x , stk[top]);</span><br><span class="line">	<span class="keyword">if</span>(l == stk[top]) <span class="keyword">return</span> ;</span><br><span class="line">	<span class="keyword">while</span>(top &gt; <span class="number">1</span> &amp;&amp; dfn[stk[top - <span class="number">1</span>]] &gt;= dfn[l]) </span><br><span class="line">		v[stk[top - <span class="number">1</span>]].push_back(stk[top]) , -- top  ;</span><br><span class="line">	<span class="keyword">if</span>(stk[top] != l) v[l].push_back(stk[top]) , stk[top] = l;</span><br><span class="line">	stk[++ top] = x;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function">I <span class="keyword">int</span> <span class="title">dp</span><span class="params">(<span class="keyword">int</span> u)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(v[u].size() == <span class="number">0</span>) <span class="keyword">return</span> mn[u];</span><br><span class="line">	<span class="keyword">int</span> tmp = <span class="number">0</span> ; </span><br><span class="line">	For(i , <span class="number">0</span> , v[u].size() - <span class="number">1</span>) tmp += dp(v[u][i]);</span><br><span class="line">	v[u].clear();</span><br><span class="line">	<span class="keyword">return</span> min(mn[u] , tmp);</span><br><span class="line">&#125; </span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	n = read();</span><br><span class="line">	For(i , <span class="number">1</span> , n - <span class="number">1</span>) &#123;</span><br><span class="line">		<span class="keyword">int</span> u = read() , v = read() , w = read() ; </span><br><span class="line">		addedge(u , v , w) ; addedge(v , u , w);</span><br><span class="line">	&#125;</span><br><span class="line">	mn[<span class="number">1</span>] = <span class="number">1e18</span> ; dfs(<span class="number">1</span>);</span><br><span class="line">	q = read();</span><br><span class="line">	<span class="keyword">while</span>(q --) &#123;</span><br><span class="line">		m = read();</span><br><span class="line">		For(i , <span class="number">1</span> , m) is[i] = read();</span><br><span class="line">		sort(is + <span class="number">1</span> , is + m + <span class="number">1</span> ,  cmp);</span><br><span class="line">		stk[top = <span class="number">1</span>] = <span class="number">1</span> ;</span><br><span class="line">		For(i , <span class="number">1</span> , m) push(is[i]);</span><br><span class="line">		<span class="keyword">while</span>(top &gt; <span class="number">0</span>) v[stk[top - <span class="number">1</span>]].push_back(stk[top]) , -- top ; </span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%lld\n"</span> , dp(<span class="number">1</span>));</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/jsm.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数学</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">虚树</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">二项式反演</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">树形dp</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://bmh201708.github.io/2020/03/05/虚树学习笔记/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-  
-    </div></section>
-  
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/02/T118870期望/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">T118870期望</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    目录，不存在的…
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
+    <!-- 来必力City版安装代码 -->
+<div id="lv-container" data-id="city" data-uid="MTAyMC80MzU4MS8yMDEyMA==">
+	<script type="text/javascript">
+   (function(d, s) {
+       var j, e = d.getElementsByTagName(s)[0];
+
+       if (typeof LivereTower === 'function') { return; }
+
+       j = d.createElement(s);
+       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+       j.async = true;
+
+       e.parentNode.insertBefore(j, e);
+   })(document, 'script');
+	</script>
+<noscript> 为正常使用来必力评论功能请激活JavaScript</noscript>
+</div>
+<!-- City版安装代码已完成 -->
     
 
+  
+  
+  
+
+  
+
+  
+
+  
 
           </div>
         </div>
@@ -268,9 +444,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
