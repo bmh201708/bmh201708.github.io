@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://bmh201708.github.io">
   <title>竞码个人挑战赛 | 蒟蒻Jim&#39;s blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="比赛链接 这里记录一下比较有意思的题目。 B题 题意：在一个环上4种染色，不能由三个连续的位置颜色颜色相同$n\le30$ 好吧这其实是个水题,但是一开始没有想到。容易发现这其实是个dp，但普通的dp似乎无法处理首位存在连续三种颜色的情况。于是我们把首尾状态压进dp的状态，设$f[i][j1][j2][k1][k2]$表示前$i$个位置，前两个位置的颜色分别为，$j1,j2$,最后两个位置的颜色分">
+  <meta name="description" content="比赛链接 这里记录一下比较有意思的题目。">
 <meta name="keywords" content="数学,动态规划,莫比乌斯反演">
 <meta property="og:type" content="article">
 <meta property="og:title" content="竞码个人挑战赛">
 <meta property="og:url" content="https://bmh201708.github.io/2020/03/15/竞码个人挑战赛/index.html">
 <meta property="og:site_name" content="蒟蒻Jim&#39;s blog">
-<meta property="og:description" content="比赛链接 这里记录一下比较有意思的题目。 B题 题意：在一个环上4种染色，不能由三个连续的位置颜色颜色相同$n\le30$ 好吧这其实是个水题,但是一开始没有想到。容易发现这其实是个dp，但普通的dp似乎无法处理首位存在连续三种颜色的情况。于是我们把首尾状态压进dp的状态，设$f[i][j1][j2][k1][k2]$表示前$i$个位置，前两个位置的颜色分别为，$j1,j2$,最后两个位置的颜色分">
+<meta property="og:description" content="比赛链接 这里记录一下比较有意思的题目。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-15T14:25:42.284Z">
+<meta property="og:updated_time" content="2020-03-15T14:31:38.213Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="竞码个人挑战赛">
-<meta name="twitter:description" content="比赛链接 这里记录一下比较有意思的题目。 B题 题意：在一个环上4种染色，不能由三个连续的位置颜色颜色相同$n\le30$ 好吧这其实是个水题,但是一开始没有想到。容易发现这其实是个dp，但普通的dp似乎无法处理首位存在连续三种颜色的情况。于是我们把首尾状态压进dp的状态，设$f[i][j1][j2][k1][k2]$表示前$i$个位置，前两个位置的颜色分别为，$j1,j2$,最后两个位置的颜色分">
+<meta name="twitter:description" content="比赛链接 这里记录一下比较有意思的题目。">
   
     <link rel="alternative" href="/atom.xml" title="蒟蒻Jim&#39;s blog" type="application/atom+xml">
   
@@ -212,6 +212,7 @@
       
         <p><a href="http://oj.hzjingma.com/contest/view?id=78" target="_blank" rel="noopener">比赛链接</a></p>
 <p>这里记录一下比较有意思的题目。</p>
+<a id="more"></a>
 <p><strong>B题</strong></p>
 <p>题意：在一个环上4种染色，不能由三个连续的位置颜色颜色相同$n\le30$</p>
 <p>好吧这其实是个水题,但是一开始没有想到。容易发现这其实是个dp，但普通的dp似乎无法处理首位存在连续三种颜色的情况。于是我们把首尾状态压进dp的状态，设$f[i][j1][j2][k1][k2]$表示前$i$个位置，前两个位置的颜色分别为，$j1,j2$,最后两个位置的颜色分别为$k1,k2$的方案数，随便转移一下就好了。</p>
@@ -248,7 +249,7 @@ f(n,m,k) = \sum_{i=1}^{\lfloor \frac{m}{k} \rfloor}\sum_{j=1}^{\lfloor \frac{n}{
 =\sum_{e=1}^{m}\mu(e)\lfloor \frac{m}{ek} \rfloor\lfloor \frac{n}{ek} \rfloor</script><p>这部分整除分块$\sqrt n$搞定。</p>
 <p>最后答案是</p>
 <script type="math/tex; mode=display">
-Ans= \sum_{d=1}^{m}\frac{(\sum_{e=1}^{m}\mu(e)\lfloor \frac{m}{ed} \rfloor\lfloor \frac{n}{ed} \rfloor) \times d}{\phi(d)}</script><p>时间复杂度$n\sqrt n$，卡卡常就过去了</p>
+Ans= \sum_{d=1}^{m}\frac{(\sum_{e=1}^{m}\mu(e)\lfloor \frac{m}{ed} \rfloor\lfloor \frac{n}{ed} \rfloor) \times d}{\phi(d)}</script><p>时间复杂度$n\sqrt n$（线性预处理逆元，不然复杂度加一个log估计就过不了了），这个肯定不是正解，但是卡卡常就过去了</p>
 
       
 
@@ -365,6 +366,15 @@ Ans= \sum_{d=1}^{m}\frac{(\sum_{e=1}^{m}\mu(e)\lfloor \frac{m}{ed} \rfloor\lfloo
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/03/18/k-dtree/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          k-dtree
+        
+      </div>
+    </a>
   
   
     <a href="/2020/03/06/从圆周运动到向心力/" id="article-nav-older" class="article-nav-link-wrap">
@@ -561,10 +571,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">整体二分</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">数学</a>
               </li>
              
@@ -577,7 +583,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">二项式反演</a>
+                <a href="javascript:void(0)" class="js-tag color4">K-D Tree</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -585,7 +591,27 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">欧拉反演</a>
+                <a href="javascript:void(0)" class="js-tag color1">二项式反演</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">整体二分</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">高一上</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">物理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">莫比乌斯反演</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,23 +627,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">莫比乌斯反演</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">高一上</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">物理</a>
+                <a href="javascript:void(0)" class="js-tag color5">欧拉反演</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">第二类斯特林数</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">珂朵莉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -626,10 +644,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">树形dp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">珂朵莉树</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -785,7 +799,8 @@ MathJax.Hub.Queue(function() {
     </div>
 
 </div>
-  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+  </div>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
 </script>
@@ -802,8 +817,7 @@ MathJax.Hub.Queue(function() {
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
 </script>
 <!-- End: Injected MathJax -->
-<!-- hexo-inject:end -->
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618},"display":{"superSample":2,"width":150,"height":300,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":false},"react":{"opacityDefault":0.5,"opacityOnHover":0.5},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<!-- hexo-inject:end --></body>
 </html>
 
 
